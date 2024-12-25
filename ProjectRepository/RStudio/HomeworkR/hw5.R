@@ -1,0 +1,6 @@
+library(faraway)
+summary(pima$glucose)
+pima$Q=as.factor(cut(pima$glucose,breaks=c(-0.1,99,117,140.2,199)))
+tapply(pima$diabetes,pima$Q,mean)
+mean(pima[(0 <= pima$glucose) & (pima$glucose <=99), ]$diabetes) 
+mean(pima[(140.2 < pima$glucose), ]$diabetes) 
